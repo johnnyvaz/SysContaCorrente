@@ -1,6 +1,7 @@
 <template>
 <main-layout>
   <div id="app">
+    <div class="container">
   <Header />
     <nav>
       <div class="nav-wrapper blue darken-1">
@@ -8,28 +9,34 @@
       </div>
     </nav>
 
-    <div class="container">
 
       <ul>
         <li v-for="(erro, index) of errors" :key="index">
           campo <b>{{erro.field}}</b> - {{erro.defaultMessage}}
         </li>
       </ul>
-
+<!-- <p>{{ hoje() }}</p> -->
+ <div>{{ gerente.nome }}, {{ gerente.dataNasc }}</div>
 
       <form @submit.prevent="salvar">
 
+          <div class="row">
           <label>ID</label>
           <input type="text" placeholder="ID" v-model="gerente.id" >
+          </div>
+          <div class="row">
           <label>Nome</label>
           <input type="text" placeholder="Nome" v-model="gerente.nome" >
+          </div>
+          <div class="row">
           <label>Telefone</label>
           <input type="number" placeholder="Telefone" v-model="gerente.telefone" >
+          </div>
+          <div class="row">
           <label>dataNasc</label>
           <input type="date" placeholder="Data de Nascimento" v-model="gerente.dataNasc" >
-
-
-          <button class="waves-effect waves-light btn-small">Salvar<i class="material-icons left">save</i></button>
+</div>
+          <button class="waves-effect waves-light btn-small">Salvar</button>
 
       </form>
 
@@ -42,7 +49,6 @@
             <th>NOME</th>
             <th>TELEFONE</th>
             <th>DATA NASCIMENTO</th>
-            <th>ID CONTA CORRENTE</th>
           </tr>
 
         </thead>
@@ -55,10 +61,12 @@
             <td>{{ gerente.nome }}</td>
             <td>{{ gerente.telefone }}</td>
             <td>{{ gerente.dataNasc }}</td>
-            <td>{{ gerente.id_cc }}</td>
+          
             <td>
-              <button @click="editar(gerente)" class="waves-effect btn-small blue darken-1"><i class="material-icons">create</i></button>
-              <button @click="remover(gerente)" class="waves-effect btn-small red darken-1"><i class="material-icons">delete_sweep</i></button>
+              <button @click="editar(gerente)" class="waves-effect btn-small blue darken-1"><i class="material-icons">Editar</i></button>
+               
+               
+              <button @click="remover(gerente)" class="waves-effect btn-small red darken-1"><i class="material-icons">Delete</i></button>
             </td>
           </tr>
         </tbody>
@@ -82,8 +90,7 @@ export default {
         id: '',
         nome: '',
         telefone: '',
-        dataNasc: '',
-        id_cc: ''
+        dataNasc: ''
       },
       errors: []
     }
@@ -95,6 +102,9 @@ export default {
 
   methods:{
     
+    //  hoje(){
+    // return 'teste'
+    // },
     listar(){
       gerente.listar().then(resposta => {
         this.gerente = resposta.data
@@ -120,27 +130,25 @@ export default {
 
         gerente.atualizar(this.gerente).then(resposta => {
           this.gerente = {}
+          console.log(gerente)
           this.errors = {}
           alert('Atualizado com sucesso!')
           this.listar()
         }).catch(e => {
           this.errors = e.response.data.errors
         })
-
       }
-      
-
     },
 
     editar(gerente){
       this.gerente = gerente
     },
 
-    remover(gerente){
+    remover(gerenter){
 
       if(confirm('Deseja excluir o gerente?')){
 
-        gerente.apagar(gerente).then(resposta => {
+        gerente.apagar(gerenter).then(resposta => {
           this.listar()
           //this.errors = {}
         }).catch(e => {

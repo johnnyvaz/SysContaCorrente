@@ -27,4 +27,13 @@ module.exports = app => {
         .put(app.api.cartaocredito.save)
         .get(app.api.cartaocredito.getById)
         .delete(app.api.cartaocredito.remove)
-}
+    
+    app.route('/contato')
+        .get(app.api.contato.get)
+        .post(app.api.contato.save)
+
+    app.route('/contato/:id')
+        .put(app.api.contato.save)
+        .get(app.api.contato.getById)
+        .delete(app.api.contato.remove)
+    }

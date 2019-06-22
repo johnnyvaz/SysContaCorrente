@@ -18,12 +18,12 @@ module.exports = app => {
             app.db('gerente')
                 .update(gerente)
                 .where({ id: gerente.id })
-                .then(_ => res.status(204).send())
+                .then(_ => res.status(204).send('Gerente Atualizado com sucesso'))
                 .catch(err => res.status(500).send(err))
         } else {
             app.db('gerente')
                 .insert(gerente)
-                .then(_ => res.status(204).send())
+                .then(_ => res.status(204).send('Gerente salvo com sucesso'))
                 .catch(err => res.status(500).send(err))
         }
     }

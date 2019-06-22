@@ -5,8 +5,6 @@ exports.up = function(knex, Promise) {
         table.string('nome')
         table.integer('telefone',11)
         table.date('dataNasc')
-        table.integer('id_cc').unsigned()
-        table.foreign('id_cc').references('contacorrente.id')
     })
 };
 

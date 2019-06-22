@@ -22,7 +22,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 15px 30px;
-    background: #b1f5f1;
+    background: #cae0fc;
   }
 
   h1 {

@@ -1,24 +1,20 @@
 <template>
   <main-layout>
     <p>Cartão de Crédito</p>
-
-
     <form @submit.prevent="salvar">
 
-          <label>ID</label>
-          <input type="text" placeholder="ID" v-model="cartao.id" >
           <label>Bandeira</label>
           <input type="text" placeholder="" v-model="cartao.bandeira" >
           <label>Numero Cartão</label>
           <input type="number" placeholder="" v-model="cartao.numeroCartao" >
           <label>Validade</label>
-          <input type="number" placeholder="" v-model="cartao.validade" >
+          <input type="date" placeholder="" v-model="cartao.validade" >
           <label>Código de Segurança</label>
           <input type="number" placeholder="" v-model="cartao.codigoSeguranca" >
           <label>Cód Conta Corrente</label>
           <input type="text" placeholder="" v-model="cartao.id_cc" >
 
-          <button class="waves-effect waves-light btn-small">Salvar<i class="material-icons left">save</i></button>
+          <button class="waves-effect waves-light btn-small">Salvar</button>
       </form>
       <table>
         <thead>
@@ -116,10 +112,10 @@
     editar(cartao){
       this.cartao = cartao
     },
-    remover(cartao){
+    remover(cartaoa){
       if(confirm('Deseja excluir o cartao?')){
 
-        cartao.apagar(cartao).then(resposta => {
+        cartao.apagar(cartaoa).then(resposta => {
           this.listar()
           //this.errors = {}
         }).catch(e => {

@@ -132,11 +132,11 @@ export default {
       this.conta = conta
     },
 
-    remover(conta){
+    remover(contax){
 
       if(confirm('Deseja excluir o conta?')){
 
-        conta.apagar(conta).then(resposta => {
+        conta.apagar(contax).then(resposta => {
           this.listar()
           //this.errors = {}
         }).catch(e => {

@@ -3,7 +3,8 @@ import { http } from './config'
 export default	{
 
 	salvar:(gerente)=>{
-		return http.post('ge',gerente);
+		console.log(gerente)
+		return http.post('ge', gerente);
   },
     
 	atualizar:(gerente)=>{
@@ -15,6 +16,6 @@ export default	{
   },
     
 	apagar:(gerente)=>{
-		return http.delete('ge', { data: gerente })
+		return http.delete('ge/'+gerente.id )
 	}
 }

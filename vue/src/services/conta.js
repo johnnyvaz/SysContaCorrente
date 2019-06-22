@@ -15,6 +15,6 @@ export default	{
   },
     
 	apagar:(conta)=>{
-		return http.delete('cc/:id', { data: conta })
+		return http.delete('cc/'+conta.id)
 	}
 }

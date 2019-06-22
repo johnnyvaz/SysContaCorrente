@@ -3,6 +3,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import routes from './routes'
+var moment = require('moment');
+moment().format();
 
 Vue.use(BootstrapVue)
 
