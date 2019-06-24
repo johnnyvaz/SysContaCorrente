@@ -41,31 +41,22 @@
       </form>
 
       <table>
-
         <thead>
-
           <tr>
             <th>ID</th>
             <th>NOME</th>
             <th>TELEFONE</th>
             <th>DATA NASCIMENTO</th>
           </tr>
-
         </thead>
-
         <tbody>
-
           <tr v-for="gerente of gerente" :key="gerente.id">
-
             <td>{{ gerente.id }}</td>
             <td>{{ gerente.nome }}</td>
             <td>{{ gerente.telefone }}</td>
             <td>{{ gerente.dataNasc }}</td>
-          
             <td>
               <button @click="editar(gerente)" class="waves-effect btn-small blue darken-1"><i class="material-icons">Editar</i></button>
-               
-               
               <button @click="remover(gerente)" class="waves-effect btn-small red darken-1"><i class="material-icons">Delete</i></button>
             </td>
           </tr>
@@ -77,9 +68,9 @@
 </template>
 
 <script>
-  import VLink from '../components/VLink.vue'
-  import MainLayout from '../layouts/Main.vue'
-  import gerente from '../services/gerente'
+  import VLink from '../VLink.vue'
+  import MainLayout from '../../layouts/Main.vue'
+  //import gerente from '../services/gerente'
 
 export default {
   components: { MainLayout },

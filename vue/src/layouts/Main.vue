@@ -10,7 +10,6 @@
   import VLink from '../components/VLink.vue'
   import Footer from '../components/template/Footer.vue'
   import Header from '../components/template/Header.vue'
-  // import Conta from '../pages/Conta.vue'
 
   export default {
     components: { VLink, Footer, Header }

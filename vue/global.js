@@ -1,0 +1,19 @@
+import axios from 'axios'
+
+export const http = axios.create({
+    baseURL: 'http://localhost:3001/',
+});
+
+export const baseURL = 'http://localhost:3001'
+
+export function showError(e) {
+    if(e && e.response && e.response.data) {
+        Vue.toasted.global.defaultError({ msg : e.response.data })
+    } else if(typeof e === 'string') {
+        Vue.toasted.global.defaultError({ msg : e })
+    } else {
+        Vue.toasted.global.defaultError()
+    }
+}
+
+export default { showError, baseURL}

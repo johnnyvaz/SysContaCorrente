@@ -1,5 +1,5 @@
 .DS_Store
-node_modules/
-node_modules_erro/
-dist/
+node_modules
+node_modules_erro
+dist
 npm-debug.log
