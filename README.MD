@@ -2,16 +2,10 @@
 ![print](docs/gerente.png)
 
 # SISTEMA CRUD BÁSICO
-BACK
 
-EXPRESS + KNEX
-
-FRONT
-
-VUE
 
 # Instalação
-## Back
+## Back - (Express + Knex)
 1 - O backend precisa configurar o arquivo .env com o caminho do banco de dados
 
 2 - Npm install
@@ -19,7 +13,7 @@ VUE
 3 - npm start
 
 
-## Front
+## Front - (Vue)
 
 1 - npm i
 
