@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-  <Header />
-    <slot></slot>
+  <div>
+    <Header />
+    <div class="container">
+      <slot></slot>
+    </div>
     <Footer />
   </div>
 </template>
@@ -10,6 +12,7 @@
   import VLink from '../components/VLink.vue'
   import Footer from '../components/template/Footer.vue'
   import Header from '../components/template/Header.vue'
+  import '../config/global'
 
   export default {
     components: { VLink, Footer, Header }
@@ -17,16 +20,15 @@
 </script>
 
 <style scoped>
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 15px 30px;
-    background: #cae0fc;
+  * {
+    box-sizing: border-box;
   }
-
-  h1 {
-    text-align: center;
-    
+  
+  body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background-color: lightgray;
   }
+  
+  
 </style>
- 

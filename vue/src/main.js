@@ -1,7 +1,11 @@
+// import 'font-awesome/css/font-awesome.css'
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import Toasted from 'vue-toasted'
+
 import routes from './routes'
 var moment = require('moment');
 moment().format();
@@ -30,3 +34,20 @@ const app = new Vue({
 window.addEventListener('popstate', () => {
   app.currentRoute = window.location.pathname
 })
+
+Vue.use(Toasted, {
+    iconPack: 'fontawesome',
+    duration: 3000
+})
+
+Vue.toasted.register(
+    'defaultSave',
+    payload => !payload.msg ? 'Registro salvo com sucesso!' : payload.msg,
+    { type: 'success', icon: 'check' }
+)
+
+Vue.toasted.register(
+    'defaultDel',
+    payload => !payload.msg ? 'Excluído com sucesso!' : payload.msg,
+    { type : 'error', icon : 'times' }
+)

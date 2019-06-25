@@ -1,130 +1,129 @@
 <template>
-    <header class="header">
-       
-        <h1 class="title">
-            <v-link href="/">Home</v-link>
-        </h1>
-      <div class="menu">
-          <ul>
-      <li>
-        <v-link href="/gerente">Gerente</v-link>
-        <v-link href="/contacorrente">Conta Corrente</v-link>
-        <v-link href="/cartao">Cartão de Crédito</v-link>
-        <v-link href="/contato">Contato</v-link>
-      </li>
-    </ul>
-    </div>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="/">
+             <!-- <img src="../../assets/logo.png" width="200" alt="Logo" /> -->
+                <!-- <img src="" alt="Logo" /> -->
+            </a>
+        </div>
+      
+        <nav class="menu">
+            <ul>
+                 <v-link href="/gerente">Gerente</v-link>
+                    <v-link href="/contacorrente">Conta Corrente</v-link>
+                    <v-link href="/cartaocredito">Cartão de Crédito</v-link>
+                    <v-link href="/contato">Contato</v-link>
+            </ul>
+        </nav>
     </header>
 </template>
 
 <script>
-  import VLink from '../../components/VLink.vue'
-  import Header from '../../components/template/Header.vue'
-export default {
-    components: { VLink, Header },
-    name: 'Header',
-
-    props: {
-        title: String,
+    import VLink from '../../components/VLink.vue'
+    import Header from '../../components/template/Header.vue'
+    export default {
+        components: { VLink, Header },
+        name: 'Header',
+        
+        props: {
+            title: String,
+        }
     }
-}
 </script>
 
 <style>
-    .header {
-        grid-area: header;
-        background: linear-gradient(to right, #1e469a, #49a7c1);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
+    * {
+        box-sizing: border-box;
     }
-
-    .title {
-        font-size: 1.2rem;
-        color: #fff;
-        font-weight: 100;
-        flex-grow: 1;
-        text-align: center;
+    
+    body {
+        margin: 0;
+        font-family: 'Oswald', sans-serif;
+        background-color: #fff;
     }
-
-    .title a {
-        color: #FFF;
-        text-decoration: none;
+    
+    .cabecalho {
+        background: #333;
+        border-bottom: solid 5px #4faddb;
+        height: 80px;
+        box-sizing: content-box;
     }
-
-    .title a:hover {
-        color: #FFF;
-        text-decoration: none;
+    
+    .logo {
+        display: inline-block;
+        height: 80px;
+        padding: 15px;
     }
-
-    header.header > a.toggle {
-        width: 60px;
+    
+    .logo img {
         height: 100%;
-        color: #fff;
-        justify-self: flex-start;
+    }
+    
+    .menu-toggle {
+        float: right;
+        color: #eee;
+        background-color: #555;
+        border: solid 1px #777;
+        border-radius: 5px;
+        height: 40px;
+        padding: 10px 20px;
+        margin: 20px 15px;
+    }
+    
+    .menu {
+        display: inline-block;
+        vertical-align: top;
+        height: 80px;
+        padding: 25px;
+    }
+    
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .menu li {
+        display: inline-block;
+    }
+    
+    .cabecalho a {
         text-decoration: none;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: #eee;
+        font-size: 1.3em;
     }
-
-    header.header > a.toggle:hover {
+    
+    .menu a {
+        padding: 15px;
+    }
+    
+    .menu a:hover,
+    .menu a.selected {
+        background-color: #4faddb;
+        color: #000;
+    }
+    
+    .botao {
+        border-radius: 30px;
+        padding: 10px 25px;
+        margin: 10px;
+    }
+    
+    .destaque {
+        background: #f50a31;
         color: #fff;
-        background-color: rgba(0, 0, 0, 0.2);
     }
-       .menu {
-        grid-area: menu;
-        background: linear-gradient(to right, #232526, #414345);
-
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+    
+    /* @media(min-width: 679px) {
+        .menu-toggle {
+            display: none;
+        }
     }
-
-    .menu a,
-    .menu a:hover {
-        color: #fff;
-        text-decoration: none;
+    
+    @media(max-width: 680px) {
+        .menu {
+            display: none;
+        }
     }
-
-    .menu .tree-node.selected > .tree-content,
-    .menu .tree-node .tree-content:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .tree-arrow.has-child {
-        filter: brightness(2);
-    }
-
-    .menu .menu-filter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        margin: 20px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #AAA;
-    }
-
-    .menu .menu-filter i {
-        color: #AAA;
-        margin-right: 10px;
-    }
-
-    .menu input {
-        color: #CCC;
-        font-size: 1.3rem;
-        border: 0;
-        outline: 0;
-        width: 100%;
-        background: transparent;
-    }
-
-    .tree-filter-empty {
-        color: #CCC;
-        font-size: 1.3rem;
-        margin-left: 20px;
-    }
+    */
 </style>
